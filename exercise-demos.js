@@ -36,11 +36,11 @@ return '<div class="demoStage" data-motion="still"><canvas class="exercise3d" da
 }
 function tile(id,i){
 const e=E[id];if(!e)return "";
-return '<article class="demoTile" data-exercise="'+esc(id)+'"><div class="demoTileHead"><strong>'+(i+1)+'. '+esc(e[0])+'</strong><span class="demoPill">'+esc(e[1])+'</span></div>'+figure(id)+'<div class="demoTileBody"><p>'+esc(e[2])+'</p><p class="demoPill" style="display:inline-block">Avatar 3D animat · moviment orientatiu</p><div class="demoMore"><p><strong>Com fer-lo:</strong> '+esc(e[3])+'</p><p class="caution"><strong>Precaució:</strong> '+esc(e[4])+'</p></div><div class="demoActions"><button type="button" data-more="'+esc(id)+'">Instruccions i precaucions</button><button type="button" data-pause="'+esc(id)+'">Pausa l'esquema</button></div></div></article>';
+return '<article class="demoTile" data-exercise="'+esc(id)+'"><div class="demoTileHead"><strong>'+(i+1)+'. '+esc(e[0])+'</strong><span class="demoPill">'+esc(e[1])+'</span></div>'+figure(id)+'<div class="demoTileBody"><p>'+esc(e[2])+'</p><p class="demoPill" style="display:inline-block">Avatar 3D animat · moviment orientatiu</p><div class="demoMore"><p><strong>Com fer-lo:</strong> '+esc(e[3])+'</p><p class="caution"><strong>Precaució:</strong> '+esc(e[4])+'</p></div><div class="demoActions"><button type="button" data-more="'+esc(id)+'">Instruccions i precaucions</button><button type="button" data-pause="'+esc(id)+'">Pausa animació</button></div></div></article>';
 }
 function bind(root){
 root.querySelectorAll("[data-more]").forEach(b=>b.onclick=()=>{const t=b.closest(".demoTile");t.classList.toggle("expanded");b.textContent=t.classList.contains("expanded")?"Amaga les instruccions":"Instruccions i precaucions"});
-root.querySelectorAll("[data-pause]").forEach(b=>b.onclick=()=>{const canvas=b.closest(".demoTile").querySelector("canvas");const paused=canvas.dataset.paused==="true";canvas.dataset.paused=paused?"false":"true";b.textContent=paused?"Pausa l'esquema":"Reprèn l'esquema"});
+root.querySelectorAll("[data-pause]").forEach(b=>b.onclick=()=>{const canvas=b.closest(".demoTile").querySelector("canvas");const paused=canvas.dataset.paused==="true";canvas.dataset.paused=paused?"false":"true";b.textContent=paused?"Pausa animació":"Reprèn animació"});
 }
 function renderDay(){
 const day=D[selected];if(!day)return;
