@@ -44,7 +44,7 @@ root.querySelectorAll("[data-more]").forEach(b=>b.onclick=()=>{const t=b.closest
 function renderDay(){
 const day=D[selected];if(!day)return;
 const home=$("dailyDemos");if(home)home.innerHTML="";
-const detail=$("detailDemos");if(detail){detail.innerHTML='<section class="section"><div class="sectionTitle"><h2>Guia visual de la sessió</h2></div><div class="demoList">'+day[7].map(tile).join("")+'</div></section>';bind(detail);}
+const detail=$("detailDemos");if(detail){detail.innerHTML='<section class="section"><div class="sectionTitle"><h2>Exercicis de la sessió</h2></div><div class="demoList">+day[7].map(tile).join("")+'</div></section>';bind(detail);}
 const work=$("workoutDemo");if(work&&screen==="workout"){const id=day[7][exerciseIndex];work.innerHTML='<div class="section"><div class="sectionTitle"><h2>Com es fa aquest exercici?</h2></div>'+tile(id,exerciseIndex)+'</div>';bind(work)}
 }
 const prevShow=show;show=function(id){prevShow(id);renderDay()};
