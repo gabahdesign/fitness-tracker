@@ -1,0 +1,19 @@
+{
+  "name": "FORMA · Entrenament personal",
+  "short_name": "FORMA",
+  "description": "Pla d'entrenament personal de 12 setmanes en català",
+  "lang": "ca",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#101115",
+  "theme_color": "#101115",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
