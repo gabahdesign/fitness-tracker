@@ -90,4 +90,4 @@ $("downloadReminder").addEventListener("click",()=>{const time=$("reminderTime")
 $("exportData").addEventListener("click",()=>download(JSON.stringify({format:"forma-backup-v1",core:state,extra},null,2),"forma-copia.json","application/json"));
 $("importData").addEventListener("change",async e=>{const file=e.target.files[0];if(!file)return;try{const data=JSON.parse(await file.text());if(data.format!=="forma-backup-v1"||!data.core||!data.extra)throw Error("Format no reconegut");if(!confirm("Vols substituir el progrés actual per aquesta còpia?"))return;state.week=Math.min(12,Math.max(1,+data.core.week||1));state.done=data.core.done&&typeof data.core.done==="object"?data.core.done:{};extra={...extra,...data.extra};save();saveExtra();location.reload()}catch(err){alert("No s'ha pogut importar la còpia: "+err.message)}});
 })();
-</script><script src="./enhancements.js" defer></script><script src="./exercise-demos.js" defer></script></body></html>
+</script><script src="./enhancements.js" defer></script><script src="./exercise-demos.js" defer></script><script src="./avatar3d.js" defer></script></body></html>
